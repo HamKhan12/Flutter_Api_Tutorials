@@ -11,6 +11,8 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+// creating model through plugin JsonToDart
+
 class _HomeScreenState extends State<HomeScreen> {
 
   List<PostsModel> postList = [];

@@ -9,6 +9,8 @@ class ExampleTwo extends StatefulWidget {
   _ExampleTwoState createState() => _ExampleTwoState();
 }
 
+//creating model manually:
+
 class _ExampleTwoState extends State<ExampleTwo> {
 
   List<Photos> photosList = [];
