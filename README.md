@@ -1,16 +1,33 @@
-# api_tutorials
+# Flutter API Integration Tutorial
 
-A new Flutter project.
+This project demonstrates two different approaches to handling API data and JSON parsing in Flutter:
+1. **Manual Model Creation:** Manually writing the model class and `fromJson` method.
+2. **Plugin-Based Model Generation:** Using a code generation plugin to create the model classes automatically.
 
-## Getting Started
+## Examples Included
 
-This project is a starting point for a Flutter application.
+### 1. HomeScreen (HomeScreen.dart)
+Fetches a list of posts from JSONPlaceholder API and displays them in a list.
 
-A few resources to get you started if this is your first Flutter project:
+- **API Endpoint:** https://jsonplaceholder.typicode.com/posts
+- **Model Used:** PostsModel (Generated via plugin using PostsModel.fromJson(i))
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 2. ExampleTwo (ExampleTwo.dart)
+Fetches a list of photos from JSONPlaceholder API and displays them with thumbnails and titles.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **API Endpoint:** https://jsonplaceholder.typicode.com/photos
+- **Model Used:** Photos (Manually created within the same file)
+
+## Model Comparison
+
+### Manually Created Model (Photos in ExampleTwo.dart)
+```dart
+class Photos {
+  String title, url;
+  int id;
+
+  Photos({required this.title, required this.url, required this.id});
+}
+// Parsing done manually:
+// Photos photos = Photos(title: i['title'], url: i['url'], id: i['id']);
+
